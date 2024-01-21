@@ -8,7 +8,7 @@ def convert_base():
     try:
         numberin10 = int(number, base)
         result = ''
-        if base2 == 16:
+        if base2 == 16 or 15 or 14 or 13 or 12 or 11:  ##jesli chcesz wynik bez liczb, wypierdol na 16 TYLKO!!!
             while numberin10 > 0:
                 if numberin10 % base2 == 10:
                     result = "A" + result
@@ -29,6 +29,7 @@ def convert_base():
             result = str(numberin10 % base2) + result
             numberin10 //= base2
         result_label.config(text="Result: " + result)
+        messagebox.Message("Result: " + result)
     except ValueError:
         messagebox.showerror("Error", "Invalid input")
 
